@@ -7,6 +7,7 @@ const features = readonly([
   'Student loans',
   'National minimum wage',
   'Pensions',
+  'Student loan and postgraduate loan start and stop notifications',
   'Salary sacrifice',
   'Employee management',
   'All pay frequencies from weekly to annual',
@@ -15,7 +16,6 @@ const features = readonly([
   'Full Payment Submissions (FPS)',
   'Employer Payment Summaries (EPS)',
   'Tax code change notifications',
-  'Student loan and postgraduate loan start and stop notifications',
   'P45 and P60 generation and publication',
   'Employment Allowance and Small Employers Relief',
   'Pension Auto-Enrolment*',
@@ -29,7 +29,7 @@ const lastFeatureGroup = features.slice(10);
 </script>
 
 <template>
-  <div class="w-full space-y-4 bg-accent p-4 md:p-8 lg:space-y-6 lg:p-12 xl:p-16">
+  <div class="w-full space-y-4 bg-accent p-4 md:p-8 lg:space-y-6 lg:p-12">
     <h6 class="text-lg font-bold">Payetools provides all the features you need:</h6>
 
     <ul class="grid list-inside list-disc grid-cols-2 gap-2 lg:gap-4">

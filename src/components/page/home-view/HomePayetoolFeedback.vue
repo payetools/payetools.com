@@ -88,7 +88,7 @@ const feedbacks = readonly<Feedback[]>([
 <template>
   <div class="w-full space-y-4">
     <!-- header -->
-    <div class="w-full px-4 md:px-8 lg:px-12 xl:px-16">
+    <div class="w-full px-4 md:px-8 lg:px-12">
       <h6 class="text-lg font-bold">What are people saying about Payetools?</h6>
       <p class="text-sm text-muted-foreground">
         Don't take our word for it, Payetools is making payroll-enabling applications quicker and
@@ -109,11 +109,11 @@ const feedbacks = readonly<Feedback[]>([
           <CarouselItem
             v-for="(feedback, index) in feedbacks"
             :key="index"
-            class="pl-1 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+            class="pl-1 md:basis-1/2 lg:basis-1/3"
           >
             <div class="p-1">
               <Card>
-                <CardContent class="flex h-[400px] flex-col justify-between gap-4 p-8">
+                <CardContent class="flex h-[420px] flex-col justify-between gap-4 p-8">
                   <p>{{ feedback?.message }}</p>
 
                   <div class="flex items-center justify-between gap-3">
@@ -132,7 +132,7 @@ const feedbacks = readonly<Feedback[]>([
         <div class="mt-4">
           <CarouselTabs
             :count="feedbacks?.length"
-            class="bg-gray-300 dark:bg-background/60"
+            class="h-3 w-3 bg-gray-300 dark:bg-background/60"
             activeClass="dark:bg-background bg-gray-500"
           />
         </div>

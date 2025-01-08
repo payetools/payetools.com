@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="w-full px-6 lg:px-12 xl:px-20">
+  <div class="xsm:px-6 w-full px-2 sm:text-lg lg:px-20">
     <div class="w-full space-y-4 italic">
       <p>
         <span class="font-bold text-primary">You need to add payroll to your platform.</span> But it
