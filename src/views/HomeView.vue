@@ -20,11 +20,15 @@ import {
 
 <template>
   <div class="w-full space-y-6 pt-4 lg:space-y-10 lg:pt-2">
-    <!-- banner -->
-    <HomeBanner />
+    <div
+      class="min-h-[calc(100vh-48px)] w-full space-y-6 md:min-h-[calc(100vh-80px)] lg:space-y-10"
+    >
+      <!-- banner -->
+      <HomeBanner />
 
-    <!-- banner description -->
-    <HomeBannerDescription />
+      <!-- banner description -->
+      <HomeBannerDescription />
+    </div>
 
     <!-- cookie confirmation -->
     <CookieConfirmation />
@@ -37,9 +41,9 @@ import {
 
     <!-- empty content -->
     <div
-      class="flex aspect-video w-full items-center justify-center bg-accent p-4 text-white dark:text-background md:p-8 lg:p-12 xl:p-20"
+      class="flex aspect-video w-full items-center justify-center bg-accent p-4 text-white dark:text-background md:p-8 lg:p-20"
     >
-      <p class="text-center text-lg font-bold sm:text-xl md:text-3xl lg:text-6xl xl:text-[120px]">
+      <p class="text-center text-lg font-bold sm:text-xl md:text-3xl lg:text-6xl">
         Empty Section Awaiting New Content
       </p>
     </div>
