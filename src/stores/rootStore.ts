@@ -27,6 +27,7 @@ export const useRootStore = defineStore('root', () => {
   });
   onBeforeUnmount(() => {
     if (typeof window === 'undefined') return;
+
     window.removeEventListener('resize', () => {
       windowWidth.value = window.innerWidth;
     });
@@ -48,7 +49,7 @@ export const useRootStore = defineStore('root', () => {
     () =>
       colorMode.value === 'dark' ||
       (colorMode.value === 'system' &&
-        typeof window !== undefined &&
+        typeof window !== 'undefined' &&
         window.matchMedia('(prefers-color-scheme: dark)').matches),
   );
   watch(
