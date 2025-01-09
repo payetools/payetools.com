@@ -11,8 +11,8 @@ const darkMode = useDarkMode();
 <template>
   <Switch
     v-model:checked="darkMode"
-    thumbClass="bg-yellow-500 flex justify-center items-center"
-    class="data-[state=checked]:bg-yellow-100 data-[state=unchecked]:bg-yellow-100"
+    :thumbClass="`flex justify-center items-center ${darkMode ? 'bg-blue-500' : 'bg-yellow-500'}`"
+    class="data-[state=checked]:bg-blue-950 data-[state=unchecked]:bg-yellow-100"
   >
     <template #thumb>
       <Moon v-if="darkMode" :size="14" class="text-white" />

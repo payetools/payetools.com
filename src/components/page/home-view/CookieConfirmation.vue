@@ -9,8 +9,8 @@ const isUserInteracted = computed(() => typeof cookieAcceptanceStatus.value === 
 
 <template>
   <Transition
-    leave-to-class="opacity-0"
-    leave-active-class="transition duration-300 ease-in-out -translate-x-4"
+    leave-to-class="opacity-0 -translate-x-4"
+    leave-active-class="transition duration-300 ease-in-out"
   >
     <div
       v-if="!isUserInteracted"
