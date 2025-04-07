@@ -9,28 +9,37 @@ const isUserInteracted = computed(() => typeof cookieAcceptanceStatus.value === 
 
 <template>
   <Transition
-    leave-to-class="opacity-0 -translate-x-4"
+    leave-to-class="opacity-0 translate-y-4"
     leave-active-class="transition duration-300 ease-in-out"
   >
     <div
       v-if="!isUserInteracted"
-      class="gray-gray-300 fixed bottom-4 left-4 z-[99] flex w-[520px] max-w-[calc(100%-32px)] items-center gap-3 rounded-lg border bg-accent p-4 text-sm shadow-md shadow-gray-500 dark:border-gray-700 dark:shadow-sm dark:shadow-accent"
+      class="fixed bottom-0 left-0 right-0 z-[99] bg-background border-t border-border shadow-lg"
     >
-      <div class="flex-1">
-        We use cookies to collect data to improve your experience on our site. See our
-        <a href="#" class="text-primary underline">cookie policy</a>. You can
-        <a href="#" class="text-primary underline">change your preferences</a> at any time.
-      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-muted-foreground">
+          We use cookies to collect data to improve your experience on our site. See our
+          <a href="#" class="text-primary font-medium hover:underline">cookie policy</a>. You can
+          <a href="#" class="text-primary font-medium hover:underline">change your preferences</a> at any time.
+        </div>
 
-      <div class="flex flex-col items-center gap-1.5 sm:flex-row">
-        <Button
-          variant="outline"
-          class="shrink-0 px-4 dark:hover:bg-background/80"
-          @click="cookieAcceptanceStatus = false"
-          >Decline</Button
-        >
+        <div class="flex items-center gap-3">
+          <Button
+            variant="outline"
+            size="sm"
+            class="font-medium"
+            @click="cookieAcceptanceStatus = false"
+            >Decline</Button
+          >
 
-        <Button class="shrink-0 px-4" @click="cookieAcceptanceStatus = true">Accept</Button>
+          <Button 
+            size="sm" 
+            class="font-medium bg-secondary hover:bg-secondary/90 text-secondary-foreground" 
+            @click="cookieAcceptanceStatus = true"
+          >
+            Accept
+          </Button>
+        </div>
       </div>
     </div>
   </Transition>

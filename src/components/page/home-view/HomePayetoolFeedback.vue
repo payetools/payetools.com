@@ -16,14 +16,14 @@ const feedbacks = readonly<Feedback[]>([
     from: 'Donald Trump',
     position: 'President / USA',
     message:
-      '“Payetools? Tremendous company, absolutely the best for payments. Nobody knows payments better than me, believe me, but Payetools—wow—they’ve got it all figured out. If I had Payetools back in the day, my businesses would’ve been even more successful.',
+      '"Payetools? Tremendous company, absolutely the best for payments. Nobody knows payments better than me, believe me, but Payetools—wow—they\'ve got it all figured out. If I had Payetools back in the day, my businesses would\'ve been even more successful.',
     image: '/images/person-7.jpg',
   },
   {
     from: 'Elon Musk',
     position: 'CEO / SpaceX',
     message:
-      '"Payetools? It’s like launching a rocket, but for payments—fast, efficient, and no explosions. If SpaceX handled payments, we’d probably just call it Payetools. Highly recommend, it\'s out of this world!"',
+      '"Payetools? It\'s like launching a rocket, but for payments—fast, efficient, and no explosions. If SpaceX handled payments, we\'d probably just call it Payetools. Highly recommend, it\'s out of this world!"',
     image: '/images/person-6.jpg',
   },
   {
@@ -39,101 +39,54 @@ const feedbacks = readonly<Feedback[]>([
     message:
       '"Using Payetools feels like scoring a hat-trick in the first half—smooth, effortless, and absolutely unstoppable. If payments were a game, Payetools would always be the GOAT!"',
     image: '/images/person-9.jpg',
-  },
-  {
-    from: 'Cristiano Ronaldo',
-    position: 'Goal Machine / Football',
-    message:
-      '"Payetools? It’s like my signature free-kick—precise, powerful, and always on target. When it comes to payments, they’re definitely playing in the Champions League. Simply the best!"',
-    image: '/images/person-10.jpg',
-  },
-  {
-    from: 'Jan Van Grundy',
-    position: 'CEO / Superpay',
-    message:
-      '“Payetools let us prototype our payroll solution in a matter of days, instead of the months we expected if we coded ourselves”',
-    image: '/images/person-1.jpg',
-  },
-
-  {
-    from: 'Sean Samuels',
-    position: 'CTO / Monster Pay',
-    message: '“Payetools is magic”',
-    image: '/images/person-2.jpg',
-  },
-
-  {
-    from: 'Sally Shawshank',
-    position: 'Evangelist / Microsoft',
-    message: '“We love Payetools because it is top-notch”',
-    image: '/images/person-3.jpg',
-  },
-
-  {
-    from: 'Robin Gustafsson',
-    position: 'CEO / Rekonomista',
-    message: '“Payetools let us prototype our payroll solution in a matter of days.”',
-    image: '/images/person-4.jpg',
-  },
-
-  {
-    from: 'Arshad Sayed',
-    position: 'CEO / AOS',
-    message: '“Best at what it does”',
-    image: '/images/person-5.jpg',
-  },
+  }
 ]);
 </script>
 
 <template>
-  <div class="w-full space-y-4">
-    <!-- header -->
-    <div class="w-full px-4 md:px-8 lg:px-12">
-      <h6 class="text-lg font-bold">What are people saying about Payetools?</h6>
-      <p class="text-sm text-muted-foreground">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Trusted by Businesses Everywhere</h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
         Don't take our word for it, Payetools is making payroll-enabling applications quicker and
         easier…
       </p>
     </div>
 
     <!-- carousel -->
-    <div class="w-full bg-accent p-4 lg:p-8">
+    <div class="w-full">
       <Carousel
         class="w-full"
         :opts="{
           align: 'start',
-          // loop: true,
         }"
       >
-        <CarouselContent class="-ml-1">
+        <CarouselContent class="-ml-4">
           <CarouselItem
             v-for="(feedback, index) in feedbacks"
             :key="index"
-            class="pl-1 md:basis-1/2 lg:basis-1/3"
+            class="pl-4 md:basis-1/2 lg:basis-1/3"
           >
-            <div class="p-1">
-              <Card>
-                <CardContent class="flex h-[420px] flex-col justify-between gap-4 p-8">
-                  <p>{{ feedback?.message }}</p>
+            <Card class="h-full border border-border bg-background/50 hover:bg-background transition-colors duration-200">
+              <CardContent class="flex h-[420px] flex-col justify-between gap-4 p-6">
+                <p class="text-foreground/80 italic">{{ feedback?.message }}</p>
 
-                  <div class="flex items-center justify-between gap-3">
-                    <div class="flex h-3/5 flex-col justify-around gap-3">
-                      <div class="font-semibold">{{ feedback?.from }}</div>
-                      <div>{{ feedback?.position }}</div>
-                    </div>
-
-                    <img :src="feedback?.image" class="aspect-square w-24 rounded-lg" />
+                <div class="flex items-center gap-4">
+                  <img :src="feedback?.image" class="h-12 w-12 rounded-full object-cover" />
+                  <div>
+                    <div class="font-medium text-foreground">{{ feedback?.from }}</div>
+                    <div class="text-sm text-muted-foreground">{{ feedback?.position }}</div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </CardContent>
+            </Card>
           </CarouselItem>
         </CarouselContent>
-        <div class="mt-4">
+        <div class="mt-8 flex justify-center">
           <CarouselTabs
             :count="feedbacks?.length"
-            class="h-3 w-3 bg-gray-300 dark:bg-background/60"
-            activeClass="dark:bg-background bg-gray-500"
+            class="h-2 w-2 rounded-full bg-muted transition-colors duration-200"
+            activeClass="bg-primary"
           />
         </div>
       </Carousel>

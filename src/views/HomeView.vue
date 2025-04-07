@@ -6,32 +6,15 @@ import {
   HomePayetoolFeatures,
   HomePayetoolFeedback,
 } from '@/components/page/home-view';
-
-// top level await will trigger the suspense
-// const delay = async () => {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve(true);
-//     }, 5000);
-//   });
-// };
-// await delay();
 </script>
 
 <template>
-  <div class="w-full space-y-6 pt-4 lg:space-y-10 lg:pt-2">
-    <div
-      class="min-h-[calc(100vh-48px)] w-full space-y-6 md:min-h-[calc(100vh-80px)] lg:space-y-10"
-    >
-      <!-- banner -->
-      <HomeBanner />
+  <div class="w-full min-h-screen bg-background">
+    <!-- banner -->
+    <HomeBanner />
 
-      <!-- banner description -->
-      <HomeBannerDescription />
-    </div>
-
-    <!-- cookie confirmation -->
-    <CookieConfirmation />
+    <!-- banner description -->
+    <HomeBannerDescription />
 
     <!-- features -->
     <HomePayetoolFeatures />
@@ -39,13 +22,25 @@ import {
     <!-- feedback carousel -->
     <HomePayetoolFeedback />
 
-    <!-- empty content -->
-    <div
-      class="flex aspect-video w-full items-center justify-center bg-accent p-4 text-white dark:text-background md:p-8 lg:p-20"
-    >
-      <p class="text-center text-lg font-bold sm:text-xl md:text-3xl lg:text-6xl">
-        Empty Section Awaiting New Content
-      </p>
+    <!-- call to action section -->
+    <div class="w-full max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl p-8 md:p-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to simplify your payroll?</h2>
+        <p class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+          Join thousands of businesses that trust Payetools for their payroll needs.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="px-6 py-3 rounded-lg bg-white text-primary font-medium hover:bg-white/90 transition-colors">
+            Get Started
+          </button>
+          <button class="px-6 py-3 rounded-lg bg-primary/20 text-white border border-white/30 font-medium hover:bg-primary/30 transition-colors">
+            Contact Sales
+          </button>
+        </div>
+      </div>
     </div>
+
+    <!-- cookie confirmation -->
+    <CookieConfirmation />
   </div>
 </template>
